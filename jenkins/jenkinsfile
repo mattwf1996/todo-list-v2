@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Setup') {
+            steps {
+                sh "bash setup.sh"
+            }
+        }
+        stage('Test') {
+            steps {
+                //
+            }
+        }
+        stage('Create Schema') {
+            steps {
+                //
+            }
+        }
+        stage('Run') {
+            steps {
+                //
+            }
+        }
+    }
+}
