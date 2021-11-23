@@ -14,3 +14,7 @@ services:
     environment:
       DATABASE_URI:
       CREATE_SCHEMA:
+  ports:
+  - target: 5000
+    Published: 5000
+    
