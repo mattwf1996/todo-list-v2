@@ -8,7 +8,7 @@ backend_host = "todo-app_backend:5000"
 @app.route('/')
 @app.route('/home')
 def home():
-    all_tasks = requests.get("http://todo-app-backend:5000/read/allTasks").json()
+    all_tasks = requests.get(f"http://{backend_host}/read/allTasks").json()
     return render_template('index.html', title="Home", all_tasks=all_tasks)
 
 # @app.route('/create/task', methods=['GET','POST'])
