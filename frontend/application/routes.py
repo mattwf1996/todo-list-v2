@@ -3,6 +3,8 @@ from application.forms import TaskForm
 from flask import render_template, request, redirect, url_for, jsonify
 import requests
 
+backend_host = "todo-app_backend:5000"
+
 @app.route('/')
 @app.route('/home')
 def home():
