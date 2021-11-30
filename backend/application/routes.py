@@ -16,11 +16,23 @@ def read_tasks():
     tasks_dict = {"tasks": []}
     for task in all_tasks:
         tasks_dict["tasks"].append(
-            {
+            {   
+                "id": task.id,
                 "description": task.description,
                 "completed": task.completed
             }
         )
+    return jsonify(tasks_dict)
+
+
+@app.route('/read/task/<int:id>', methods=['GET'])
+def read_task(id):
+    task = Tasks.query.get(id)
+    tasks_dict =  {   
+                    "id": task.id,
+                    "description": task.description,
+                    "completed": task.completed
+                }
     return jsonify(tasks_dict)
 
 @app.route('/update/task/<int:id>', methods=['PUT'])
